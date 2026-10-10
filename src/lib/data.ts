@@ -73,7 +73,7 @@ export const doctors: Doctor[] = [
       ["Mental Health Screening", "$90", "Anxiety and depression assessment."],
       ["EKG", "$85", "In-office heart rhythm testing."],
       ["Travel Medicine", "$100", "Pre-travel vaccines and advice."],
-    ].map(([name, price, description]) => ({ name, price, description })),
+    ].map(([name, price, description]) => ({ name: name!, price: price!, description: description! })),
     reviews: [
       r("jm1", "Emily R.", 5, "2026-09-20", "Dr. Mitchell is the best doctor I've ever had. He listens and never rushes."),
       r("jm2", "Carlos M.", 5, "2026-09-02", "Telehealth visit was easy and he followed up personally the next day."),
