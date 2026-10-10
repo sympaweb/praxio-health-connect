@@ -51,6 +51,13 @@
   --color-chart-3: var(--chart-3);
   --color-chart-4: var(--chart-4);
   --color-chart-5: var(--chart-5);
+  --color-primary-glow: var(--primary-glow);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --font-display: "Plus Jakarta Sans", ui-sans-serif, system-ui;
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui;
+  --shadow-soft: 0 1px 3px oklch(0.3 0.05 250 / 0.08);
+  --shadow-elegant: 0 14px 34px -12px oklch(0.55 0.17 245 / 0.3);
   --color-sidebar: var(--sidebar);
   --color-sidebar-foreground: var(--sidebar-foreground);
   --color-sidebar-primary: var(--sidebar-primary);
@@ -69,9 +76,12 @@
   --card-foreground: oklch(0.129 0.042 264.695);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
-  --secondary: oklch(0.968 0.007 247.896);
+  --primary: oklch(0.55 0.17 245);
+  --primary-glow: oklch(0.68 0.13 215);
+  --success: oklch(0.6 0.14 160);
+  --warning: oklch(0.78 0.16 75);
+  --primary-foreground: oklch(0.99 0 0);
+  --secondary: oklch(0.96 0.015 240);
   --secondary-foreground: oklch(0.208 0.042 265.755);
   --muted: oklch(0.968 0.007 247.896);
   --muted-foreground: oklch(0.554 0.046 257.417);
@@ -104,8 +114,11 @@
   --card-foreground: oklch(0.984 0.003 247.858);
   --popover: oklch(0.208 0.042 265.755);
   --popover-foreground: oklch(0.984 0.003 247.858);
-  --primary: oklch(0.929 0.013 255.508);
-  --primary-foreground: oklch(0.208 0.042 265.755);
+  --primary: oklch(0.65 0.15 240);
+  --primary-glow: oklch(0.72 0.12 215);
+  --success: oklch(0.7 0.14 160);
+  --warning: oklch(0.8 0.15 75);
+  --primary-foreground: oklch(0.99 0 0);
   --secondary: oklch(0.279 0.041 260.031);
   --secondary-foreground: oklch(0.984 0.003 247.858);
   --muted: oklch(0.279 0.041 260.031);
@@ -142,3 +155,9 @@
     color: var(--color-foreground);
   }
 }
+
+@utility container-x { margin-inline: auto; width: 100%; max-width: 80rem; padding-inline: 1.25rem; }
+@utility shadow-soft { box-shadow: var(--shadow-soft); }
+@utility shadow-elegant { box-shadow: var(--shadow-elegant); }
+@utility hero-dots { background-image: radial-gradient(color-mix(in oklab, var(--primary) 18%, transparent) 1px, transparent 1px); background-size: 22px 22px; }
+@layer base { body { font-family: var(--font-sans); } }
