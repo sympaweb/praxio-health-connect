@@ -3,7 +3,7 @@ import { doctors, specialtyBySlug, cities } from "@/lib/data";
 import { DoctorCard, PageHero } from "@/components/site";
 
 export const Route = createFileRoute("/specialties/$slug")({
-  validateSearch: (s: Record<string, unknown>): { city?: string } => ({ city: (s.city as string) || undefined }),
+  validateSearch: (s: Record<string, unknown>): { city?: string | undefined } => ({ city: (s["city"] as string) || undefined }),
   loader: ({ params }) => { const s = specialtyBySlug(params.slug); if (!s) throw notFound(); return { name: s.name, desc: s.desc, slug: s.slug }; },
   head: ({ loaderData: s }) => s ? { meta: [
     { title: `${s.name} Doctors — Book Online | GoPraxio` },

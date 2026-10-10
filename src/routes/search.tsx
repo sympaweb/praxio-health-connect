@@ -5,7 +5,7 @@ import { DoctorCard, PageHero, input } from "@/components/site";
 type S = { q?: string | undefined; city?: string | undefined; specialty?: string | undefined; insurance?: string | undefined; telehealth?: boolean | undefined; rating?: number | undefined; lang?: string | undefined };
 
 export const Route = createFileRoute("/search")({
-  validateSearch: (s: Record<string, any>): S => ({
+  validateSearch: (s: { q?: any; city?: any; specialty?: any; insurance?: any; telehealth?: any; rating?: any; lang?: any }): S => ({
     q: (s.q as string) || undefined, city: (s.city as string) || undefined, specialty: (s.specialty as string) || undefined,
     insurance: (s.insurance as string) || undefined, telehealth: s.telehealth === true || s.telehealth === "true" || undefined,
     rating: s.rating ? Number(s.rating) : undefined, lang: (s.lang as string) || undefined,
