@@ -11,5 +11,5 @@ export function useLocal<T>(key: string, initial: T) {
   return [val, set] as const;
 }
 
-export type Claim = { id: string; name: string; email: string; license: string; practice: string; doctorSlug?: string; status: "pending" | "approved" | "rejected"; date: string };
+export type Claim = { id: string; name: string; email: string; license: string; practice: string; doctorSlug?: string | undefined; status: "pending" | "approved" | "rejected"; date: string };
 export type Inquiry = { id: string; doctorSlug: string; name: string; phone: string; message: string; date: string; type: string };

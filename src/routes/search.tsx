@@ -2,10 +2,10 @@ import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { doctors, specialties, cities, insurers, languageList } from "@/lib/data";
 import { DoctorCard, PageHero, input } from "@/components/site";
 
-type S = { q?: string; city?: string; specialty?: string; insurance?: string; telehealth?: boolean; rating?: number; lang?: string };
+type S = { q?: string | undefined; city?: string | undefined; specialty?: string | undefined; insurance?: string | undefined; telehealth?: boolean | undefined; rating?: number | undefined; lang?: string | undefined };
 
 export const Route = createFileRoute("/search")({
-  validateSearch: (s: Record<string, unknown>): S => ({
+  validateSearch: (s: Record<string, any>): S => ({
     q: (s.q as string) || undefined, city: (s.city as string) || undefined, specialty: (s.specialty as string) || undefined,
     insurance: (s.insurance as string) || undefined, telehealth: s.telehealth === true || s.telehealth === "true" || undefined,
     rating: s.rating ? Number(s.rating) : undefined, lang: (s.lang as string) || undefined,
