@@ -6,7 +6,7 @@ import { PageHero, input } from "@/components/site";
 import { useLocal, type Claim } from "@/lib/store";
 
 export const Route = createFileRoute("/claim")({
-  validateSearch: (s: Record<string, unknown>): { doctor?: string } => ({ doctor: (s.doctor as string) || undefined }),
+  validateSearch: (s: Record<string, unknown>): { doctor?: string | undefined } => ({ doctor: (s["doctor"] as string) || undefined }),
   head: () => ({ meta: [
     { title: "Claim or Register Your Practice | GoPraxio for Doctors" },
     { name: "description", content: "Claim your existing GoPraxio listing or register a new practice to receive patient bookings." },

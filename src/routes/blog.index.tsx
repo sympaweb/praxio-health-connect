@@ -3,7 +3,7 @@ import { articles } from "@/lib/data";
 import { PageHero } from "@/components/site";
 
 export const Route = createFileRoute("/blog/")({
-  validateSearch: (s: Record<string, unknown>): { category?: string } => ({ category: (s.category as string) || undefined }),
+  validateSearch: (s: Record<string, unknown>): { category?: string | undefined } => ({ category: (s["category"] as string) || undefined }),
   head: () => ({ meta: [
     { title: "Health Articles & Patient Resources | GoPraxio" },
     { name: "description", content: "Doctor-reviewed health articles on primary care, telehealth, heart health and pediatrics." },
